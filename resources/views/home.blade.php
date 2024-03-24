@@ -7,8 +7,9 @@
     <div class="container py-4">
       <h1>Films</h1>
 
+      @forelse ($movies as $movie)
+      <div class="card">
       <ul>
-        @forelse ($movies as $movie)
         <li>ID: {{ $movie['id'] }}</li>
         <li>Titolo: {{ $movie['title'] }}</li>
         <li>Titolo originale: {{ $movie['original_title'] }}</li>
@@ -16,6 +17,7 @@
         <li>Data: {{ $movie['date'] }}</li>
         <li>Voto: {{ $movie['vote'] }}</li>
       </ul>
+      </div>
       <hr>
     @empty
     <div class="alert alert-warning">
